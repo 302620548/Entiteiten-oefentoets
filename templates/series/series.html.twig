@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SeriesController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h3>Series:</h3>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">ID:</th>
+                <th scope="col">Title:</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for serie in series %}
+                <tr>
+                    <td>{{ serie.id }}</td>
+                    <td>{{ serie.title }}</td>
+                    <td><a href="series/{{ serie.id }}" class="btn btn-warning">Go</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
