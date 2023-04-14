@@ -26,7 +26,7 @@ class Serie
     private ?int $year = null;
 
     #[ORM\ManyToOne(inversedBy: 'series')]
-    private ?genre $genre = null;
+    private ?Genre $genre = null;
 
     #[ORM\OneToMany(mappedBy: 'serie', targetEntity: Episode::class)]
     private Collection $episodes;
@@ -77,12 +77,12 @@ class Serie
         return $this;
     }
 
-    public function getGenre(): ?genre
+    public function getGenre(): ?Genre
     {
         return $this->genre;
     }
 
-    public function setGenre(?genre $genre): self
+    public function setGenre(?Genre $genre): self
     {
         $this->genre = $genre;
 

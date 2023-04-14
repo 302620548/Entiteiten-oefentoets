@@ -14,11 +14,11 @@
             </tr>
             </thead>
             <tbody>
-            {% for serie in series %}
+            {% for episode in episodes %}
                 <tr>
-                    <td>{{ serie.id }}</td>
-                    <td>{{ serie.title }}</td>
-                    <td><a href="episodes/{{ serie.id }}" class="btn btn-warning">Go</a></td>
+                    <td>{{ episode.id }}</td>
+                    <td>{{ episode.title }}</td>
+                    <td><a href="episodes/{{ episode.id }}" class="btn btn-warning">Go</a></td>
                 </tr>
             {% endfor %}
             </tbody>

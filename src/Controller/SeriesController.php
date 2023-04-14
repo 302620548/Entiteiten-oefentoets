@@ -35,4 +35,17 @@ class SeriesController extends AbstractController
             'series' => $series
         ]);
     }
+
+    /**
+     * @Route("/series/episodes/{id}", methods={"GET"})
+     */
+    public function episodes(SerieRepository $serieRepository, int $id): Response
+    {
+        $serie = $serieRepository->find($id);
+        $episodes = $serie->getEpisodes();
+
+        return $this->render('series/episodes.html.twig', [
+            'episodes' => $episodes
+        ]);
+    }
 }
